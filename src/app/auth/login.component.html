@@ -1,0 +1,101 @@
+<div class="main">
+    <section class="sign-in">
+        <div class="container">
+            <div class="signin-content">
+                <div class="signin-image">
+                    <figure><img src="../../../assets/img/Mobile-login-Cristina.jpg" alt="sing up image"></figure>
+                    <a [routerLink]="'register'" class="signup-image-link">Create an account</a>
+                </div>
+
+                <div class="signin-form">
+                    <h2 class="form-title">Sign in</h2>
+                    <form class="register-form mb-3" id="login-form" [formGroup]="submitForm" (ngSubmit)="onSubmit()">
+                        <div *ngIf="emailInvalid" class="small form-text text-danger">
+                            *Introduzca un correo válido.
+                        </div>
+                        <div class="form-group">
+                            <label for="email"><i class="zmdi zmdi-account material-icons-name"></i></label>
+                            <input class="form-control" type="email" name="email" id="email" placeholder="Your Email" (change)="onChangeEmail($event)" formControlName="email" />
+                        </div>
+                        <div class="form-group">
+                            <label for="pass"><i class="zmdi zmdi-lock"></i></label>
+                            <input class="form-control" type="password" name="pass" id="pass" placeholder="Password" formControlName="pass" />
+                        </div>
+                        <div class="form-group">
+                            <input type="checkbox" name="remember-me" id="remember-me" class="agree-term" formControlName="rememberMe" />
+                            <label for="remember-me" class="label-agree-term"><span><span></span></span>Remember me</label>
+                        </div>
+                        <div *ngIf="submitInvalid" class="small form-text text-danger">
+                            *Introduzca correo y contrasena válidos.
+                        </div>
+                        <div class="form-group form-button">
+                            <input type="submit" name="signin" id="signin" class="form-submit" value="Log in" />
+                        </div>
+                    </form>
+
+                    <div *ngIf="invalidUser" class="alert alert-danger alert-dismissible fade show" role="alert">
+                        <strong>Correo o contrasena incorrectas.</strong>
+                        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                    </div>
+                    <div class="social-login">
+                        <span class="social-label">Or login with</span>
+                        <ul class="socials">
+                            <li><a><i class="display-flex-center zmdi zmdi-facebook"></i></a></li>
+                            <li><a><i class="display-flex-center zmdi zmdi-twitter"></i></a></li>
+                            <li><a (click)="onGoogleSignIn()"><i class="display-flex-center zmdi zmdi-google"></i></a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</div>
+
+
+<!-- <div class="limiter">
+    <div class="container-login100">
+        <div class="wrap-login100">
+            <div class="login100-form-title" style="background-image: url(assets/img/bg-01.jpg);">
+                <span class="login100-form-title-1">
+                    Sign In
+                </span>
+            </div>
+
+            <form class="login100-form validate-form" [formGroup]="submitForm" (ngSubmit)="onSubmit()">
+
+                <div id="user-div" class="wrap-input100 validate-input m-b-26" data-validate="Email is required">
+                    <span class="label-input100">Username</span>
+                    <input class="input100" id="email" type="email" name="email" placeholder="Enter email" formControlName="userName" required>
+                    <span class="focus-input100"></span>
+                </div>
+
+                <div id="pass-div" class="wrap-input100 validate-input m-b-18" data-validate="Password is required">
+                    <span class="label-input100">Password</span>
+                    <input class="input100" id="pass" type="password" name="pass" placeholder="Enter password" formControlName="pass" required>
+                    <span class="focus-input100"></span>
+                </div>
+
+                <div class="flex-sb-m w-full p-b-30">
+                    <div class="contact100-form-checkbox">
+                        <input class="input-checkbox100" id="ckb1" type="checkbox" name="remember-me" formControlName="rememberMe">
+                        <label class="label-checkbox100" for="ckb1">
+                            Remember me
+                        </label>
+                    </div>
+
+                    <div>
+                        <a [routerLink]="['forgot-password']" class="txt1">
+                            Forgot Password?
+                        </a>
+                    </div>
+                </div>
+
+                <div class="container-login100-form-btn">
+                    <button class="login100-form-btn" type="submit">
+                        Login
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div> -->
