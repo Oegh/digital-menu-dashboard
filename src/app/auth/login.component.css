@@ -1,6 +1,9 @@
 /* @extend display-flex; */
 
-@import url("../../assets/fonts/font-awesome-4.7.0/css/font-awesome.min.css");
+
+/* @import url("../../assets/fonts/font-awesome-4.7.0/css/font-awesome.min.css"); */
+
+@import url("https://use.fontawesome.com/releases/v5.13.0/css/all.css");
 @import url("../../assets/fonts/Linearicons-Free-v1.0.0/icon-font.min.css");
 @import url("../../assets/fonts/material-icon/css/material-design-iconic-font.min.css");
 display-flex,
