@@ -1,0 +1,27 @@
+.sidebar_menu {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.sidebar_menu .menu-list {
+    flex: 1;
+    justify-content: normal;
+}
+
+.sidebar_menu .icon {
+    padding: 0 10px 0 0;
+    text-align: center;
+    vertical-align: middle;
+    margin-right: 5px;
+}
+
+.sidebar_menu .label {
+    margin: 0;
+}
+
+.sidebar_menu .active-list-item {
+    color: #66CC98 !important;
+}
+
+@import url("../../../../assets/scss/sidebar.scss");

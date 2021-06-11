@@ -7,4 +7,12 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'dashboard';
+
+  loginRoute: boolean = false;
+
+  constructor(){}
+
+  ngOnInit(): void {
+  }
+
 }

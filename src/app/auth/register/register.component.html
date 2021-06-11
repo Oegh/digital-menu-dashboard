@@ -1,0 +1,60 @@
+<div class="main">
+    <section class="signup">
+        <div class="container">
+            <div class="signup-content">
+                <div class="signup-form">
+                    <h2 class="form-title">Sign up</h2>
+                    <form class="register-form mb-3" id="register-form" [formGroup]="submitForm" (ngSubmit)="onSubmit()">
+                        <div class="form-group">
+                            <label for="name"><i class="zmdi zmdi-account material-icons-name"></i></label>
+                            <input class="form-control" type="text" name="name" id="name" placeholder="Your Name" (change)="onChange($event)" formControlName="userName" required/>
+                        </div>
+                        <div *ngIf="emailInvalid" class="small form-text text-danger">
+                            *Introduzca un correo válido.
+                        </div>
+                        <div class="form-group">
+                            <label for="email"><i class="zmdi zmdi-email"></i></label>
+                            <input class="form-control" type="email" name="email" id="email" placeholder="Your Email" (change)="onChangeEmail($event)" formControlName="email" />
+                        </div>
+                        <div *ngIf="passwordWeak" class="small form-text text-danger">
+                            *Su contrasena es muy debil introduzca una que tenga Mayusculas, numeros.
+                        </div>
+                        <div class="form-group">
+                            <label for="pass"><i class="zmdi zmdi-lock"></i></label>
+                            <input class="form-control" type="password" name="pass" id="pass" placeholder="Password" (change)="onChangePassword($event)" formControlName="pass" />
+                        </div>
+
+                        <div *ngIf="submitForm.get('confirmPass').errors" class="small form-text text-danger">
+                            <div *ngIf="submitForm.get('confirmPass').errors['passFirst']">*Set a password first</div>
+                            <div *ngIf="submitForm.get('confirmPass').errors['passDontMatch']">*The passwords dont match.</div>
+                        </div>
+                        <div class="form-group">
+                            <label for="re-pass"><i class="zmdi zmdi-lock-outline"></i></label>
+                            <input class="form-control" type="password" name="re_pass" id="re_pass" placeholder="Repeat your password" formControlName="confirmPass">
+                        </div>
+
+                        <div class="form-group">
+                            <input type="checkbox" name="agree-term" id="agree-term" class="agree-term" formControlName="agree" />
+                            <label for="agree-term" class="label-agree-term"><span><span></span></span>I agree all statements in  <a href="#" class="term-service">Terms of service</a></label>
+                        </div>
+
+                        <div class="form-group form-button">
+                            <input [disabled]="!this.submitForm.valid" type="submit" name="signup" id="signup" class="form-submit" value="Register" />
+                        </div>
+                    </form>
+
+                    <div *ngIf="emailExists" class="alert alert-danger alert-dismissible fade show" role="alert">
+                        <strong>El usuario ya existe!</strong> Ya existe un usuario con ese correo.
+                        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                    </div>
+                </div>
+                <div class="signup-image">
+                    <figure><img src="../../../../assets/img/2853458.jpg" alt="sing up image"></figure>
+                    <a [routerLink]="'/login'" class="signup-image-link">I am already member</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+</div>
